@@ -1,0 +1,23 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": 
+  [
+    {
+      "type": "eventHubTrigger",
+      "name": "events",
+      "direction": "in",
+      "eventHubName": "capgemhub",
+      "connection": "AzureEventHubConnectionString",
+      "cardinality": "many",
+      "consumerGroup": "$Default",
+      "dataType": "string"
+    },
+    {
+      "type": "eventHub",
+      "name": "$return",
+      "eventHubName": "eventhub2",
+      "connection": "AzureEventHubConnectionString",
+      "direction": "out"
+    }
+  ]
+}
