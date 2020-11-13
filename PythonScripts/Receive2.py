@@ -3,9 +3,9 @@ import logging
 from azure.eventhub import EventHubConsumerClient
 
 # Declare the Connection string of event hub namespace, Event hub 2 name, consumer_group ($Default is the default consumer group).
-connection_str = 'Endpoint=sb://capgeminihub.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=MmUYgnW2ZDU4NLBrCRiXByXHZbhmFRsXgO06abPFApc='
+connection_str = 'Endpoint=sb://<EventHubNamespaceName>.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=<SharedAccessKey>'
 consumer_group = '$Default'
-eventhub_name = 'eventhub2'
+eventhub_name = '<EventHubName>'
 # Create a consumer client to consume events from the event hub.
 client = EventHubConsumerClient.from_connection_string(connection_str, consumer_group, eventhub_name=eventhub_name)
 logger = logging.getLogger("azure.eventhub")
