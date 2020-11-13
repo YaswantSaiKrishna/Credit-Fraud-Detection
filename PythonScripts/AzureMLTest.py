@@ -3,8 +3,8 @@ import urllib.request
 import json
 
 # Declare your azure machine learning predictive model url and api key for web service. 
-url = 'https://asiasoutheast.services.azureml.net/workspaces/cc032ee688744372b4902889be809043/services/1162df773b784d9d8332a292d78bf62a/execute?api-version=2.0&format=swagger'
-api_key = '5istkoxokpskUPNJr7ZDHsgBMg15+RjIR3QQioVTREZGzGJwkjjf7Yt6NEBgxW0LAMEiz1uv+UaNwkHLUly5fA=='
+url = '<Azure Predictive Model WebService URL>'
+api_key = '<API Key of WebService>'
 
 # Enter the credit values manually for test.
 data = {
