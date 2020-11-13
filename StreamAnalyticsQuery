@@ -1,0 +1,53 @@
+SELECT
+    e.EventEnqueuedUtcTime as EnqueTime,
+    e.EventProcessedUtcTime as ProcessTime,
+    out.ArrayValue.Time as TransactionTime,
+    out.ArrayValue.V1 as V1,
+    out.ArrayValue.V2 as V2,
+    out.ArrayValue.V3 as V3,
+    out.ArrayValue.V4 as V4,
+    out.ArrayValue.V5 as V5,
+    out.ArrayValue.V6 as V6,
+    out.ArrayValue.V7 as V7,
+    out.ArrayValue.V8 as V8,
+    out.ArrayValue.V9 as V9,
+    out.ArrayValue.V10 as V10,
+    out.ArrayValue.V11 as V11,
+    out.ArrayValue.V12 as V12,
+    out.ArrayValue.V13 as V13,
+    out.ArrayValue.V14 as V14,
+    out.ArrayValue.V15 as V15,
+    out.ArrayValue.V16 as V16,
+    out.ArrayValue.V17 as V17,
+    out.ArrayValue.V18 as V18,
+    out.ArrayValue.V19 as V19,
+    out.ArrayValue.V20 as V20,
+    out.ArrayValue.V21 as V21,
+    out.ArrayValue.V22 as V22,
+    out.ArrayValue.V23 as V23,
+    out.ArrayValue.V24 as V24,
+    out.ArrayValue.V25 as V25,
+    out.ArrayValue.V26 as V26,
+    out.ArrayValue.V27 as V27,
+    out.ArrayValue.V28 as V28,
+    out.ArrayValue.Amount as Amount,
+    out.ArrayValue.[Scored Labels] as Label,
+    out.ArrayValue.[Scored Probabilities] as Probability
+INTO
+    [tablestrg]
+FROM
+    [eventhub2] as e
+    CROSS APPLY GetArrayElements(Results.output1) AS out;
+
+SELECT
+    CAST(e.EventEnqueuedUtcTime as datetime) as EnqueTime,
+    CAST(e.EventProcessedUtcTime as datetime) as ProcessTime,
+    CAST(out.ArrayValue.Time as bigint) as TransactionTime,
+    CAST(out.ArrayValue.Amount as float) as Amount,
+    CAST(out.ArrayValue.[Scored Labels] as bigint) as Label,
+    CAST(out.ArrayValue.[Scored Probabilities] as float) as Probability
+INTO
+    [powerbi]
+FROM
+    [eventhub2] as e
+    CROSS APPLY GetArrayElements(Results.output1) AS out;
