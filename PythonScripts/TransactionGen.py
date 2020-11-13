@@ -8,8 +8,8 @@ import json
 from azure.eventhub import EventHubProducerClient, EventData
 
 # Declare your eventhub name and eventhub namespace connection string.
-EventhubName = "capgemhub"
-EventhubNamespace_ConnStr = "Endpoint=sb://capgeminihub.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=MmUYgnW2ZDU4NLBrCRiXByXHZbhmFRsXgO06abPFApc="
+EventhubName = "<EventHubName>"
+EventhubNamespace_ConnStr = "Endpoint=sb://<EventHubNamespaceName>.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=<SharedAccessKey>"
 
 # Initialise a count variable for generating transaction time.
 count = 0
