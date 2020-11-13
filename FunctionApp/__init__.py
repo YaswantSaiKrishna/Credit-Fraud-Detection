@@ -7,8 +7,8 @@ import json
 import azure.functions as func
 
 # Declare your azure machine learning predictive model url and api key for web service. 
-url = 'https://asiasoutheast.services.azureml.net/workspaces/cc032ee688744372b4902889be809043/services/1162df773b784d9d8332a292d78bf62a/execute?api-version=2.0&format=swagger'
-api_key = '5istkoxokpskUPNJr7ZDHsgBMg15+RjIR3QQioVTREZGzGJwkjjf7Yt6NEBgxW0LAMEiz1uv+UaNwkHLUly5fA==' # Replace this with the API key for the web service
+url = '<Azure Predictive Model URL>'
+api_key = '<Azure Predictive Model WebService API Key>' # Replace this with the API key for the web service
 
 # Whenever a event is received by event hub the main function will be triggered automatically.
 def main(events: List[func.EventHubEvent]):
