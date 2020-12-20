@@ -4,3 +4,4 @@ Large retail organisations face challenges when they move their business online.
 # Problem being Solved
 The main obejective of this project is to architect a platform using azure technologies that helps to detect frauds in real time on a power bi dashboard.
 # Architecture
+![alt text](https://github.com/YaswantSaiKrishna/Credit-Fraud-Detection/blob/main/Images/Architecture.jpeg?raw=true)
